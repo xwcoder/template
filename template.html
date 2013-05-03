@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="template.js"></script>
+    <script src="tmpldata.js"></script>
+    <p>基本使用:注释，指令h </p>
+    <div id="tmpl1"></div>
+    <script>
+        ( function () {
+            var render = new Template( html1 );
+            Template.registHelper( {
+                addAdmin : function ( s ) {
+                    return 'admins:' + s;
+                }
+            } );
+            var str = render.render( vData );
+            document.getElementById( 'tmpl1' ).innerHTML = str;
+        } )();
+    </script>
+
+    <p>注册helper:</p>
+    <div id="tmpl2"></div>
+    <script>
+        ( function () {
+            var render = new Template( html2 );
+            render.registHelper( {
+                addAdmin : function ( s ) {
+                    return 'admin:' + s;
+                }
+            } );
+
+            var str = render.render( vData );
+            document.getElementById( 'tmpl2' ).innerHTML = str;
+        } )();
+    </script>
+
+    <p>快捷方式Template.render:</p>
+    <div id="tmpl3"></div>
+    <script>
+        ( function () {
+            var str = Template.render( html1, vData );
+            document.getElementById( 'tmpl3' ).innerHTML = str;
+        } )();
+    </script>
+</body>
+</html>
+
