@@ -113,7 +113,7 @@ f:{String} 格式样式，如'yy-MM-dd', 'yyyy年MM月dd日'
 t:{Number|String} 秒数。   
 f:{String} 格式样式，如'mm:ss', 'mm分ss秒'
 
-### truncate ### 
+### truncate
     helper.truncate( s, limit,  isSuffix, suffix );
 
 字符串截取。   
