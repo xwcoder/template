@@ -6,8 +6,8 @@ template
 ## 简介 ##
 一个简单的前端模板引擎，基于John Resig的[Micro-Templating](http://ejohn.org/blog/javascript-micro-templating/)构建。
 
-    &lt;% logic %&gt;
-    &lt;%= 输出 %&gt;
+    <% logic %>
+    <%= 输出 %>
 
 区别如下：
 
@@ -89,7 +89,7 @@ funcs: {Object}
 目前只支持一条指令，即辅助功能: &lt;%@ h:helper %&gt;
 
 h: 辅助功能命名，默认是helper。模板中使用:
-    '<p class="info"> <%= helper.timeFormat( v.t, "mm:ss" ) %></p>'
+    <p class="info"> <%= helper.timeFormat( v.t, "mm:ss" ) %></p>
 
 ## 辅助功能 ##
 封装了少量的常用功能。
@@ -111,7 +111,7 @@ f:{String} 格式样式，如'yy-MM-dd', 'yyyy年MM月dd日'
 
 时间格式化。(主要用于视频时间)   
 t:{Number|String} 秒数。   
-f:{String} 格式样式，如'mm:ss', 'mm分ss秒'   
+f:{String} 格式样式，如'mm:ss', 'mm分ss秒'
 
 ### truncate ### 
     helper.truncate( s, limit,  isSuffix, suffix );
@@ -129,3 +129,7 @@ suffix:{String} 可选，默认是'...'。后缀
 s:{String|Number} 原始数据   
 n:{Number} 可选，默认是3。n个一组   
 splitChar:{String} 可选，默认是','。用于分隔的字符
+
+## License ##
+
+All directories and files are MIT Licensed.
