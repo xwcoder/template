@@ -20,7 +20,7 @@
     };
 
     /**
-     * @notice 内建指令，不要多度设计。用不到include等等。
+     * @notice 内建指令，提醒自己千万不要过度设计。用不到include等等。
      */
     var globalDirs = {
         h : { name : 'helper', dir : 'helper' }
