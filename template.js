@@ -1,9 +1,3 @@
-/**
- * 1、预编译
- * 2、不自动缓存
- * 3、实例化
- * 4、辅助函数
- */
 ( function ( global ) {
     global = global || this;
 
