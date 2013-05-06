@@ -132,6 +132,10 @@
                 b = b.replace(reg, '$1' + splitChar + '$2$3');
             }
             return a + b + c;
+        },
+
+        escapeXSS : function ( s ) {
+            return ( s || '' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
         }
     } );
 

@@ -19,6 +19,8 @@
             } );
             var str = render.render( vData );
             document.getElementById( 'tmpl1' ).innerHTML = str;
+
+            console.log( render.helper.escapeXSS( '<script>alert<\/script>' ) );
         } )();
     </script>
 

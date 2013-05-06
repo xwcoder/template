@@ -130,6 +130,12 @@ s:{String|Number} 原始数据
 n:{Number} 可选，默认是3。n个一组   
 splitChar:{String} 可选，默认是','。用于分隔的字符
 
+#### escapeXSS ####
+    helper.escapeXSS( s );
+
+防止XSS攻击，对'<' 和 '>' 进行html转义。
+s:{String} 原始数据   
+
 ## License ##
 
 All directories and files are MIT Licensed.
