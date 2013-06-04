@@ -100,9 +100,33 @@
                 return s;
             } 
 
-            s = s.substr( limit );
+            s = s.substr( 0, limit );
             if ( isSuffix ) {
                 s = s + ( suffix || '...' );
+            }
+            return s;
+        },
+
+        /**
+         * @description 字符串截取, 中文按两个字符
+         * @param s {String} 要截取的字符串
+         * @param limit {Number} 截取长度
+         * @param isSuffix {boolean} 是否添加后缀，默认false
+         * @param suffix {String} 后缀，默认'...'
+         */
+        truncateCN : function ( s, limit, isSuffix, suffix ) {
+            s = s || '';
+            var r =/[^\x00-\xff]/g;
+            isSuffix = isSuffix || false;
+            suffix = suffix || '...';
+
+            if ( limit > 0 && s.replace( r, 'mm' ).length > limit ) {
+                var m = Math.floor( limit / 2 );
+                for ( var i = m; i < s.length; i++ ) {
+                    if ( s.substr( 0, i ).replace( r, 'mm' ).length >= limit ) {
+                        return s.substr( 0, i ) + ( isSuffix ? suffix : '' );
+                    }
+                }
             }
             return s;
         },
