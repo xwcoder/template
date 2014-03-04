@@ -81,7 +81,7 @@
 
             for ( var p in map ) {
                 if ( new RegExp ( '(' + p + ')' ).test( f ) ) {
-                    f = f.replace( RegExp.$1, ( '00' + map[ p ] ).substr( ~RegExp.$1.length + 1 ) );
+                    f = f.replace( RegExp.$1, ( '00' + map[ p ] ).slice( ~RegExp.$1.length + 1 ) );
                 }
             }
             return f;
